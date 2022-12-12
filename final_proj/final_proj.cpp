@@ -53,7 +53,8 @@ int main()
 		case 5:	
 			cout << "Please enter the massage: " << endl;
 			cin >> massage;
-			cout << massage;
+			cout << massage << endl;
+			break;
 		default:
 			cout << "Wrong Input! Please chose again: " << endl;
 			break;
