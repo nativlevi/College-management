@@ -47,7 +47,7 @@ int main()
 			cout << "Please enter id to find its details: " << endl;
 			cin >> id;
 			data.search(id);
-			if(!(data.search(id)))
+			if(data.search(id)==false)
 				{cout<<"we are not found this id"<<endl<< "may you want to add this id?"<<endl<<"1-yes"<<endl<<"2-no"<<endl;
 				 cin>>op;
 				 if(op==1)
