@@ -26,5 +26,5 @@ public:
 	void print_all()const;
 	bool find(int long id);
 	void operator-=(long id);
-	void search(long id);
+	bool search(long id);
 };
