@@ -52,6 +52,7 @@ int main()
 				 cin>>op;
 				 if(op==1)
 				 	{data.init();}
+				}
 			break;
 		case 4:
 			data.print_all();
