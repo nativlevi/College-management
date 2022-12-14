@@ -398,7 +398,7 @@ void Data::init()
 				cin >> seniority;
 			}
 			cout << endl;
-			p = new WorkingStudent(name, id, average, num_of_courses, name_of_teza, seniority, weekly_hours);
+			p = new WorkingStudent(name, id, average, num_of_courses, days, name_of_teza, seniority, weekly_hours);
 			Data::operator+=(p);
 			break;
 		default:
