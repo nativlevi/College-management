@@ -65,6 +65,7 @@ bool Data::find(int long id)
 }
 void Data::init()
 {
+	int days;
 	int choise; //בחירת סוג מתאים מהתפריט
 	char name[20]; //מערך סטטי לקליטת שם
 	long id; //תעודת זהות
@@ -97,7 +98,6 @@ void Data::init()
 			cout << "Please enter:" << endl;
 			cout << "1-BA Student" << endl;
 			cout << "2-MA Student" << endl;
-
 			cin >> choise2;
 
 			switch (choise2)
@@ -132,7 +132,10 @@ void Data::init()
 				cout << endl;
 				cout << "Name Of Department: ";
 				cin >> nameofdepartment;
-				p = new BA(name, id, average, num_of_courses, nameofdepartment);
+				cout << "please enter How many days are missing in the year?";
+				cin >> days;
+				cout << endl;
+				p = new BA(name, id, average, num_of_courses,days, nameofdepartment);
 				Data::operator+=(p);
 				break;
 			case 2://MA Student
@@ -167,7 +170,10 @@ void Data::init()
 				cout << "Name of teza: ";
 				cin >> name_of_teza;
 				cout << endl;
-				p = new MA(name, id, average, num_of_courses, name_of_teza);
+				cout << "please enter How many days are missing in the year?";
+				cin >> days;
+				cout << endl;
+				p = new MA(name, id, average, num_of_courses,days, name_of_teza);
 				Data::operator+=(p);
 				break;
 			default:

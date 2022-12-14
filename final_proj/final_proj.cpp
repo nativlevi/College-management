@@ -27,8 +27,6 @@ int main()
 		cout << "3-find person" << endl;
 		cout << "4-print all person" << endl;
 		cout << "5-send a massage" << endl;
-		cout << "fjjghjgjg"<< endl;
-		cout << "ffffffjjjjjjjj" << endl;
 		cout << "0- exit" << endl;
 		cin >> choose;
 		switch (choose)

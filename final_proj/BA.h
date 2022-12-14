@@ -10,7 +10,7 @@ protected:
 	char* nameofdepartment;
 public:
 
-	BA(char* name, long id, float average, int num_of_courses, char* nameofdepartment);
+	BA(char* name, long id, float average, int num_of_courses , int days, char* nameofdepartment);
 	BA(const BA& b);
 	virtual ~BA();
 	virtual void print()const;

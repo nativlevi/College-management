@@ -9,7 +9,7 @@ class MA : virtual public Student
 protected:
 	char* name_of_teza;
 public:
-	MA(char* name, long int id, float average, int num_of_courses, char* name_of_teza);
+	MA(char* name, long int id, float average, int num_of_courses,int days , char* name_of_teza);
 	MA(const MA& m);
 	virtual ~MA();
 	virtual void print()const;
