@@ -3,96 +3,96 @@
 using namespace std;
 #include "Data.h"
 Data::Data()
-{//απΰι γιτεμθιαι
+{//Γ΅Γ°Γ Γ© Γ£Γ©Γ΄Γ¥Γ¬Γ¨Γ©Γ΅Γ©
 	arr = NULL;
 	size = 0;
 }
 Data::~Data()
-{//τεπχφιδ δεψρϊ 
+{//Γ΄Γ¥Γ°Γ·Γ¶Γ©Γ¤ Γ¤Γ¥ΓΈΓ±ΓΊ 
 	for (int i = 0; i < size; i++)
 	{
-		delete arr[i];//ξηιχϊ ξφαις πεληι
+		delete arr[i];//Γ®Γ§Γ©Γ·ΓΊ Γ®Γ¶Γ΅Γ©Γ² Γ°Γ¥Γ«Γ§Γ©
 	}
-	delete[] arr;//ξηιχϊ δξφαις μξςψκ δΰεαιιχθιν
+	delete[] arr;//Γ®Γ§Γ©Γ·ΓΊ Γ¤Γ®Γ¶Γ΅Γ©Γ² Γ¬Γ®Γ²ΓΈΓª Γ¤Γ Γ¥Γ΅Γ©Γ©Γ·Γ¨Γ©Γ­
 }
 void Data::operator+=(Person* p)
-{//δερτϊ ΰγν μξΰβψ
+{//Γ¤Γ¥Γ±Γ΄ΓΊ Γ Γ£Γ­ Γ¬Γ®Γ ΓΆΓΈ
 	if (size == 0)
-	{//αξιγδ εδξΰβψ ψιχ
-		arr = new Person * [1];//δχφΰϊ ξχεν ΰηγ
-		arr[size] = p;//δερτϊ δΰγν ωχιαμπε
+	{//Γ΅Γ®Γ©Γ£Γ¤ Γ¥Γ¤Γ®Γ ΓΆΓΈ ΓΈΓ©Γ·
+		arr = new Person * [1];//Γ¤Γ·Γ¶Γ ΓΊ Γ®Γ·Γ¥Γ­ Γ Γ§Γ£
+		arr[size] = p;//Γ¤Γ¥Γ±Γ΄ΓΊ Γ¤Γ Γ£Γ­ ΓΉΓ·Γ©Γ΅Γ¬Γ°Γ¥
 		size++;
-		return;//ριεν δτεπχφιδ
+		return;//Γ±Γ©Γ¥Γ­ Γ¤Γ΄Γ¥Γ°Γ·Γ¶Γ©Γ¤
 	}
-	Person** temp = new Person * [size];//δβγψϊ ξςψκ αβεγμ ωιω μπε μωξιψϊ δςψλιν
-	int i;//ΰιπγχρ
+	Person** temp = new Person * [size];//Γ¤ΓΆΓ£ΓΈΓΊ Γ®Γ²ΓΈΓª Γ΅ΓΆΓ¥Γ£Γ¬ ΓΉΓ©ΓΉ Γ¬Γ°Γ¥ Γ¬ΓΉΓ®Γ©ΓΈΓΊ Γ¤Γ²ΓΈΓ«Γ©Γ­
+	int i;//Γ Γ©Γ°Γ£Γ·Γ±
 	for (i = 0; i < size; i++)
 	{
-		temp[i] = arr[i];//δςϊχϊ δΰπωιν ωχιιξιν λαψ αξΰβψ
+		temp[i] = arr[i];//Γ¤Γ²ΓΊΓ·ΓΊ Γ¤Γ Γ°ΓΉΓ©Γ­ ΓΉΓ·Γ©Γ©Γ®Γ©Γ­ Γ«Γ΅ΓΈ Γ΅Γ®Γ ΓΆΓΈ
 	}
-	delete[]arr;//ξηιχϊ δξφαις μξςψκ ωμ δξΰβψ
-	arr = new Person * [size + 1];//δχφΰδ αβεγμ δξγειιχ δηγω
+	delete[]arr;//Γ®Γ§Γ©Γ·ΓΊ Γ¤Γ®Γ¶Γ΅Γ©Γ² Γ¬Γ®Γ²ΓΈΓª ΓΉΓ¬ Γ¤Γ®Γ ΓΆΓΈ
+	arr = new Person * [size + 1];//Γ¤Γ·Γ¶Γ Γ¤ Γ΅ΓΆΓ¥Γ£Γ¬ Γ¤Γ®Γ£Γ¥Γ©Γ©Γ· Γ¤Γ§Γ£ΓΉ
 	for (i = 0; i < size; i++)
 	{
-		arr[i] = temp[i];//δηζψϊ δςψλιν ωωξψπε αtemp 
+		arr[i] = temp[i];//Γ¤Γ§Γ¦ΓΈΓΊ Γ¤Γ²ΓΈΓ«Γ©Γ­ ΓΉΓΉΓ®ΓΈΓ°Γ¥ Γ΅temp 
 	}
-	arr[size] = p;//δερτϊ δΰεαιιχθ ωχιαμπε
-	delete[]temp;//ξηιχϊ ξφαις ςζψ
-	size++;//ςγλεο δβεγμ δηγω
-	return;//ριεν δτεπχφιδ
+	arr[size] = p;//Γ¤Γ¥Γ±Γ΄ΓΊ Γ¤Γ Γ¥Γ΅Γ©Γ©Γ·Γ¨ ΓΉΓ·Γ©Γ΅Γ¬Γ°Γ¥
+	delete[]temp;//Γ®Γ§Γ©Γ·ΓΊ Γ®Γ¶Γ΅Γ©Γ² Γ²Γ¦ΓΈ
+	size++;//Γ²Γ£Γ«Γ¥Γ― Γ¤ΓΆΓ¥Γ£Γ¬ Γ¤Γ§Γ£ΓΉ
+	return;//Γ±Γ©Γ¥Γ­ Γ¤Γ΄Γ¥Γ°Γ·Γ¶Γ©Γ¤
 }
 void Data::print_all()const
-{//δγτρϊ δξΰβψ
+{//Γ¤Γ£Γ΄Γ±ΓΊ Γ¤Γ®Γ ΓΆΓΈ
 	cout << "~~~~~~~~~~~~~~~~~~" << endl;
 	for (int i = 0; i < size; i++)
 	{
-		arr[i]->print();//ζιξεο τεπχφιεϊ δδγτρδ αδϊΰν μρεβ δΰεαιιχθ
+		arr[i]->print();//Γ¦Γ©Γ®Γ¥Γ― Γ΄Γ¥Γ°Γ·Γ¶Γ©Γ¥ΓΊ Γ¤Γ¤Γ£Γ΄Γ±Γ¤ Γ΅Γ¤ΓΊΓ Γ­ Γ¬Γ±Γ¥ΓΆ Γ¤Γ Γ¥Γ΅Γ©Γ©Γ·Γ¨
 		if (dynamic_cast <Employee*>(arr[i]))
 		{
-			cout << "Salary: " << dynamic_cast <Employee*>(arr[i])->salary() << endl;//δγτρϊ ξωλεψϊ
+			cout << "Salary: " << dynamic_cast <Employee*>(arr[i])->salary() << endl;//Γ¤Γ£Γ΄Γ±ΓΊ Γ®ΓΉΓ«Γ¥ΓΈΓΊ
 		}
 		cout << "~~~~~~~~~~~~~~~~~~" << endl;
 	}
 }
 bool Data::find(int long id)
-{//ηιτεω ΰεαιιχθ αξΰβψ δχιιν
+{//Γ§Γ©Γ΄Γ¥ΓΉ Γ Γ¥Γ΅Γ©Γ©Γ·Γ¨ Γ΅Γ®Γ ΓΆΓΈ Γ¤Γ·Γ©Γ©Γ­
 	for (int i = 0; i < size; i++)
 	{
-		if (arr[i]->get_id() == id)//ΰν δϊςεγϊ ζδεϊ ωχιαμπε ζδδ μϊςεγϊ ζδεϊ ωμ δΰεαιιχθ
-			return true;//ξφΰπε ΰεαιιχθ ζδδ
+		if (arr[i]->get_id() == id)//Γ Γ­ Γ¤ΓΊΓ²Γ¥Γ£ΓΊ Γ¦Γ¤Γ¥ΓΊ ΓΉΓ·Γ©Γ΅Γ¬Γ°Γ¥ Γ¦Γ¤Γ¤ Γ¬ΓΊΓ²Γ¥Γ£ΓΊ Γ¦Γ¤Γ¥ΓΊ ΓΉΓ¬ Γ¤Γ Γ¥Γ΅Γ©Γ©Γ·Γ¨
+			return true;//Γ®Γ¶Γ Γ°Γ¥ Γ Γ¥Γ΅Γ©Γ©Γ·Γ¨ Γ¦Γ¤Γ¤
 	}
-	return false;//ΰιο ΰγν λζδ αξΰβψ
+	return false;//Γ Γ©Γ― Γ Γ£Γ­ Γ«Γ¦Γ¤ Γ΅Γ®Γ ΓΆΓΈ
 }
 void Data::init()
 {
 	int days;
-	int choise; //αηιψϊ ρεβ ξϊΰιν ξδϊτψιθ
-	char name[20]; //ξςψκ ρθθι μχμιθϊ ων
-	long id; //ϊςεγϊ ζδεϊ
-	int seniority;//πιριεο
-	float average = 0.0; //ξξεφς
-	long phone_num;//ξρτψ θμτεο ωμ ξζλιψδ
-	int extra_hours;//ωςεϊ περτεϊ ωμ ΰα αιϊ
-	int num_of_courses;//ξρτψ χεψριν ωμ ξψφδ
-	int weekly_hours;//ωςεϊ ωαεςιεϊ ωμ ξϊψβμ
-	char name_of_teza[30];//ων θζδ
-	Person* p;//ξφαις ςζψ
-	int work_hours;//ωςεϊ ςαεγδ ωμ δξπχδ
-	char nameofdepartment[30];//ξημχδ
+	int choise; //Γ΅Γ§Γ©ΓΈΓΊ Γ±Γ¥ΓΆ Γ®ΓΊΓ Γ©Γ­ Γ®Γ¤ΓΊΓ΄ΓΈΓ©Γ¨
+	char name[20]; //Γ®Γ²ΓΈΓª Γ±Γ¨Γ¨Γ© Γ¬Γ·Γ¬Γ©Γ¨ΓΊ ΓΉΓ­
+	long id; //ΓΊΓ²Γ¥Γ£ΓΊ Γ¦Γ¤Γ¥ΓΊ
+	int seniority;//Γ°Γ©Γ±Γ©Γ¥Γ―
+	float average = 0.0; //Γ®Γ®Γ¥Γ¶Γ²
+	long phone_num;//Γ®Γ±Γ΄ΓΈ Γ¨Γ¬Γ΄Γ¥Γ― ΓΉΓ¬ Γ®Γ¦Γ«Γ©ΓΈΓ¤
+	int extra_hours;//ΓΉΓ²Γ¥ΓΊ Γ°Γ¥Γ±Γ΄Γ¥ΓΊ ΓΉΓ¬ Γ Γ΅ Γ΅Γ©ΓΊ
+	int num_of_courses;//Γ®Γ±Γ΄ΓΈ Γ·Γ¥ΓΈΓ±Γ©Γ­ ΓΉΓ¬ Γ®ΓΈΓ¶Γ¤
+	int weekly_hours;//ΓΉΓ²Γ¥ΓΊ ΓΉΓ΅Γ¥Γ²Γ©Γ¥ΓΊ ΓΉΓ¬ Γ®ΓΊΓΈΓΆΓ¬
+	char name_of_teza[30];//ΓΉΓ­ Γ¨Γ¦Γ¤
+	Person* p;//Γ®Γ¶Γ΅Γ©Γ² Γ²Γ¦ΓΈ
+	int work_hours;//ΓΉΓ²Γ¥ΓΊ Γ²Γ΅Γ¥Γ£Γ¤ ΓΉΓ¬ Γ¤Γ®Γ°Γ·Γ¤
+	char nameofdepartment[30];//Γ®Γ§Γ¬Γ·Γ¤
 
 
-	cout << "Please enter:" << endl;//δγτρϊ ϊτψιθ
+	cout << "Please enter:" << endl;//Γ¤Γ£Γ΄Γ±ΓΊ ΓΊΓ΄ΓΈΓ©Γ¨
 	cout << "1-Student" << endl;
 	cout << "2-Employee" << endl;
 	cout << "3-Working Student" << endl;
 	cout << "0-EXIT" << endl;
 
 	cin >> choise;
-	int choise2;//ξωϊπδ μωξιψϊ δαηιψϊ δωπιιδ
+	int choise2;//Γ®ΓΉΓΊΓ°Γ¤ Γ¬ΓΉΓ®Γ©ΓΈΓΊ Γ¤Γ΅Γ§Γ©ΓΈΓΊ Γ¤ΓΉΓ°Γ©Γ©Γ¤
 
-	while (choise)//λμ ςεγ μΰ πχμθ 0
+	while (choise)//Γ«Γ¬ Γ²Γ¥Γ£ Γ¬Γ  Γ°Γ·Γ¬Γ¨ 0
 	{
-		switch (choise)//αηιψϊ δθιτερ δξϊΰιν
+		switch (choise)//Γ΅Γ§Γ©ΓΈΓΊ Γ¤Γ¨Γ©Γ΄Γ¥Γ± Γ¤Γ®ΓΊΓ Γ©Γ­
 		{
 		case 1://Student
 			cout << "Please enter:" << endl;
@@ -110,14 +110,14 @@ void Data::init()
 				cin >> id;
 				cout << endl;
 				while (find(id))
-				{//αγιχδ ωϊςεγϊ δζδεϊ μΰ ηεζψϊ ςμ ςφξδ 
+				{//Γ΅Γ£Γ©Γ·Γ¤ ΓΉΓΊΓ²Γ¥Γ£ΓΊ Γ¤Γ¦Γ¤Γ¥ΓΊ Γ¬Γ  Γ§Γ¥Γ¦ΓΈΓΊ Γ²Γ¬ Γ²Γ¶Γ®Γ¤ 
 					cout << "ID exist, try again " << endl;
 					cin >> id;
 				}
 				cout << "Average: ";
 				cin >> average;
 				while (average < 0 || average>100)
-				{//ϊχιπεϊ ξξεφς
+				{//ΓΊΓ·Γ©Γ°Γ¥ΓΊ Γ®Γ®Γ¥Γ¶Γ²
 					cout << "Average must be between 0-100. Please enter new average:" << endl;
 					cin >> average;
 				}
@@ -125,7 +125,7 @@ void Data::init()
 				cout << "Number Of Courses: ";
 				cin >> num_of_courses;
 				while (num_of_courses < 0)
-				{//ϊχιπεϊ ξρτψ χεψριν
+				{//ΓΊΓ·Γ©Γ°Γ¥ΓΊ Γ®Γ±Γ΄ΓΈ Γ·Γ¥ΓΈΓ±Γ©Γ­
 					cout << "Number of courses must be positive. Please enter new number of courses: " << endl;
 					cin >> num_of_courses;
 				}
@@ -154,7 +154,7 @@ void Data::init()
 				cout << "Average: ";
 				cin >> average;
 				while (average < 0 || average>100)
-				{//ϊχιπεϊ ξξεφς
+				{//ΓΊΓ·Γ©Γ°Γ¥ΓΊ Γ®Γ®Γ¥Γ¶Γ²
 					cout << "Average must be between 0-100. Please enter new average:" << endl;
 					cin >> average;
 				}
@@ -162,7 +162,7 @@ void Data::init()
 				cout << "Number of courses: ";
 				cin >> num_of_courses;
 				while (num_of_courses < 0)
-				{//ϊχιπεϊ ξρτψ χεψριν
+				{//ΓΊΓ·Γ©Γ°Γ¥ΓΊ Γ®Γ±Γ΄ΓΈ Γ·Γ¥ΓΈΓ±Γ©Γ­
 					cout << "Number of courses must be positive. Please enter new number of courses: " << endl;
 					cin >> num_of_courses;
 				}
@@ -340,7 +340,7 @@ void Data::init()
 				cout << "Number of courses: ";
 				cin >> num_of_courses;
 				while (num_of_courses < 0)
-				{//ϊχιπεϊ ξρτψ χεψριν
+				{//ΓΊΓ·Γ©Γ°Γ¥ΓΊ Γ®Γ±Γ΄ΓΈ Γ·Γ¥ΓΈΓ±Γ©Γ­
 					cout << "Number of courses must be positive. Please enter new number of courses: " << endl;
 					cin >> average;
 				}
@@ -359,14 +359,14 @@ void Data::init()
 			cout << "ID: " << endl;
 			cin >> id;
 			while (find(id))
-			{//αγιχδ ωϊςεγϊ δζδεϊ μΰ ηεζψϊ ςμ ςφξδ 
+			{//Γ΅Γ£Γ©Γ·Γ¤ ΓΉΓΊΓ²Γ¥Γ£ΓΊ Γ¤Γ¦Γ¤Γ¥ΓΊ Γ¬Γ  Γ§Γ¥Γ¦ΓΈΓΊ Γ²Γ¬ Γ²Γ¶Γ®Γ¤ 
 				cout << "ID exist, try again " << endl;
 				cin >> id;
 			}
 			cout << "Average: " << endl;
 			cin >> average;
 			while (average < 0 || average>100)
-			{//ϊχιπεϊ ξξεφς
+			{//ΓΊΓ·Γ©Γ°Γ¥ΓΊ Γ®Γ®Γ¥Γ¶Γ²
 				cout << "Average must be between 0-100. Please enter new average: " << endl;
 				cin >> average;
 			}
@@ -374,7 +374,7 @@ void Data::init()
 			cout << "Number of courses: " << endl;
 			cin >> num_of_courses;
 			while (num_of_courses < 0)
-			{//ϊχιπεϊ ξρτψ χεψριν
+			{//ΓΊΓ·Γ©Γ°Γ¥ΓΊ Γ®Γ±Γ΄ΓΈ Γ·Γ¥ΓΈΓ±Γ©Γ­
 				cout << "Number of courses must be positive. Please enter new number of courses: " << endl;
 				cin >> average;
 			}
@@ -410,11 +410,11 @@ void Data::init()
 		cout << "2-Employee" << endl;
 		cout << "3-Working Student" << endl;
 		cout << "0-EXIT" << endl;
-		cin >> choise;//χμιθδ ξηγω
+		cin >> choise;//Γ·Γ¬Γ©Γ¨Γ¤ Γ®Γ§Γ£ΓΉ
 	}
 	return;
 }
-void Data::search(long id)
+bool Data::search(long id)
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -424,10 +424,10 @@ void Data::search(long id)
 			cout << "This id was found on the list. Details of person:" << endl;
 			arr[i]->print();
 			cout << "~~~~~~~~~~~~~~~~~~" << endl;
-			return;
+			return true;
 		}
 	}
-	cout << "ID was not found on the list." << endl;
+	return false;
 }
 void Data::operator-=(long id)
 {
