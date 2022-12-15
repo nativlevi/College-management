@@ -17,6 +17,8 @@ int main()
 	Data data;
 	int choose = 1;
 	int op;
+	char name[30];
+	char phone[11];
 	char massage[700];
 	long id;
 	cout << "Hello! welcome to SCE" << endl;
@@ -52,6 +54,8 @@ int main()
 				 cin>>op;
 				 if(op==1)
 				 	{data.init();}
+				 if(op==2)
+				 	{cout<<"please leave details and we will get back to you soon"<<endl; cout<< "enter your name"<<endl; cin>>name;  cout<< "enter your phone"<<endl; cin>>phone;}
 				}
 			break;
 		case 4:
