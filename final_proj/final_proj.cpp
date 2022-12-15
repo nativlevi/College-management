@@ -25,7 +25,7 @@ int main()
 	{
 		cout << "1-update person" << endl;
 		cout << "2-remove person" << endl;
-		cout << "3-find person" << endl;
+		cout << "3-find person" << endl
 		cout << "4-print all person" << endl;
 		cout << "5-send a massage" << endl;
 		cout << "0- exit" << endl;
