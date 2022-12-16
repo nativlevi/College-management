@@ -122,6 +122,11 @@ void Data::init()
 					cin >> average;
 				}
 				cout << endl;
+				if (average <= 65)
+				{
+					cout << "You are entitled to a practitioner. Contact the college secretary.";
+					cout << endl;
+				}
 				cout << "Number Of Courses: ";
 				cin >> num_of_courses;
 				while (num_of_courses < 0)
@@ -159,6 +164,11 @@ void Data::init()
 					cin >> average;
 				}
 				cout << endl;
+				if (average <= 65)
+				{
+					cout << "You are entitled to a practitioner. Contact the college secretary.";
+					cout << endl;
+				}
 				cout << "Number of courses: ";
 				cin >> num_of_courses;
 				while (num_of_courses < 0)
