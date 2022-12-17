@@ -64,6 +64,7 @@ int main()
 			break;
 		case 5:	
 			cout << "Please enter the massage: " << endl;
+			cin >> masaage;
 			save_massage = new char[strlen(massage+1)];
 			if (save_massage == NULL)
 			{
