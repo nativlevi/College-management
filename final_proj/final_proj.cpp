@@ -20,6 +20,7 @@ int main()
 	char name[30];
 	char phone[11];
 	char massage[700];
+	char* save_massage = NULL;
 	long id;
 	cout << "Hello! welcome to SCE" << endl;
 	cout << "plesee choose: " << endl;
@@ -63,8 +64,13 @@ int main()
 			break;
 		case 5:	
 			cout << "Please enter the massage: " << endl;
-			cin >> massage;
-			cout << massage << endl;
+			save_massage = new char[strlen(massage+1)];
+			if (save_massage == NULL)
+			{
+				return 0;
+			}
+			strcpy(save_massage, massage);
+			cout << save_massage << endl;
 			break;
 		default:
 			cout << "Wrong Input! Please chose again: " << endl;
